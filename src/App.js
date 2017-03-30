@@ -18,12 +18,17 @@ export default class App extends Component {
   constructor() {
     super();
     this.rssParser = new RssFeedManager('http://dealwithjs.io/rss');
-    console.log(this.rssParser.getFeedUrl());
+
   }
 
   componentDidMount() {
-    this.rssParser.getFeedData().then((data)=>{
-      console.log("App.js:" + data);
+    this.rssParser.getFeedData((data) => {
+      //console.log('XXXXX:' + data.rss.channel[0].title);
+      //
+      // TODO: add data handling logic
+      //
+    }, (err) => {
+      console.error(err);
     });
   }
 
