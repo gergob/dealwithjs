@@ -20,7 +20,7 @@ export default class RssFeedManager {
       if(resp.status == 200) {
         resp.text().then((str) => {
           this.parseString(str, (err, data) => {
-
+            //console.log(JSON.stringify(data, null, 2));
             if(err && errCallback) {
               this.parsedFeedData = null;
               errCallback(err);
