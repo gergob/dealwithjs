@@ -1,0 +1,3 @@
+rootProject.name = 'dealwithjs'
+
+include ':app'
