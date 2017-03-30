@@ -1,13 +1,31 @@
-import React, { Component } from 'react';
+/**
+ * @flow
+ */
 
+
+import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 
 import {
   Button
 } from 'react-native-elements';
 
+import RssFeedManager from './managers/RssFeedManager';
+
 
 export default class App extends Component {
+
+  constructor() {
+    super();
+    this.rssParser = new RssFeedManager('http://dealwithjs.io/rss/');
+  }
+
+  componentDidMount() {
+    this.rssParser.getFeedData().then((data)=>{
+      console.log("App.js:" + data);
+    });
+  }
+
   render() {
     return (
       <View>
