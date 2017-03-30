@@ -6,11 +6,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "buffer": "^5.0.5",
+    "events": "^1.1.1",
     "react": "15.4.2",
     "react-native": "0.42.3",
     "react-native-elements": "^0.10.3",
     "react-native-vector-icons": "^4.0.0",
-    "rss-parser": "^2.6.1"
+    "stream": "0.0.2",
+    "timers": "^0.1.1",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
