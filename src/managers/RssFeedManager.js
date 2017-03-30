@@ -2,9 +2,6 @@
  * @flow
  */
 
-import rssParser from 'feedparser';
-
-
 export default class RssFeedManager {
   constructor(feedUrl) {
     this.feedUrl = feedUrl;
@@ -17,8 +14,9 @@ export default class RssFeedManager {
 
   getFeedData() {
     return fetch(this.feedUrl).then((resp) => {
-      if(response.status == 200) {
-        this.parsedFeedData = resp;
+      console.log(resp.status);
+      if(resp.status == 200) {
+        this.parsedFeedData = resp.text();
       }
       else {
         this.parsedFeedData = null;
@@ -28,6 +26,6 @@ export default class RssFeedManager {
     }).catch((error) => {
       console.error(error);
       this.parsedFeedData = null;
-    }).done();
+    });
   }
 }

@@ -17,7 +17,8 @@ export default class App extends Component {
 
   constructor() {
     super();
-    this.rssParser = new RssFeedManager('http://dealwithjs.io/rss/');
+    this.rssParser = new RssFeedManager('http://dealwithjs.io/rss');
+    console.log(this.rssParser.getFeedUrl());
   }
 
   componentDidMount() {
