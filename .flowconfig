@@ -7,6 +7,7 @@
 
 ; Ignore unexpected extra "@providesModule"
 .*/node_modules/.*/node_modules/fbjs/.*
+.*/node_modules/.*
 
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
@@ -22,7 +23,6 @@ node_modules/react-native/flow
 flow/
 
 [options]
-emoji=true
 
 module.system=haste
 
@@ -43,4 +43,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 unsafe.enable_getters_and_setters=true
 
 [version]
-^0.38.0
+^0.32.0
