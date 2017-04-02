@@ -58,11 +58,11 @@ const PostList = React.createClass({
            <Text style={{marginBottom: 10}}>
            {rowData.description}
            </Text>
-           <View style={{flex:1, flexDirection:'row', justifyContent: 'space-between'}}>
+           <View style={{flex:1, flexDirection:'column', justifyContent: 'space-between'}}>
             <Button
-              icon={{name: 'book'}}
+              icon={{name: 'reorder'}}
               backgroundColor='#F7DF1E'
-              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+              buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
               onPress= {() => {
                 console.log('clicked');
               }}

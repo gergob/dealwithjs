@@ -5,9 +5,9 @@
 import XmlToJS from 'xml2js';
 
 export default class RssFeedManager {
+
   constructor(feedUrl) {
     this.feedUrl = feedUrl;
-    this.parseString = XmlToJS.parseString;
     this.parsedFeedData = null;
   }
 
@@ -19,7 +19,7 @@ export default class RssFeedManager {
     return fetch(this.feedUrl).then((resp) => {
       if(resp.status == 200) {
         resp.text().then((str) => {
-          this.parseString(str, (err, data) => {
+          XmlToJS.parseString(str, (err, data) => {
             //console.log(JSON.stringify(data, null, 2));
             if(err && errCallback) {
               this.parsedFeedData = null;
